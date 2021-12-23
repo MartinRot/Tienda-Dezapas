@@ -1,0 +1,5 @@
+INICIAR APP EN REACT
+
+- npm install -g create-react-app
+- create -react-app myapp
+- npm install
