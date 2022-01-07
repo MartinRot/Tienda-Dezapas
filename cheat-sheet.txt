@@ -3,3 +3,9 @@ INICIAR APP EN REACT
 - npm install -g create-react-app
 - create -react-app myapp
 - npm install
+
+Una vez instalado
+En la ubicacion del index
+- npm start
+
+webpack npm i webpack webpack-cli -D

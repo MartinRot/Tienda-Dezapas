@@ -2,10 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 /* import MiModulo from './MiModulo' */
 import { MiModulo } from './MiModulo'
+import { NavBar } from '../src/components/NavBar'
 
 function App() {
   return (
     <div className="App">
+
+      <NavBar/>
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         
@@ -32,5 +36,9 @@ function App() {
     </div>
   );
 }
+
+console.log("HGFGOKDFOGHK");
+
+
 
 export default App;
