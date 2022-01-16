@@ -1,46 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
-import { MiModulo } from './MiModulo';
-import { NavBar } from '../src/components/NavBar';
 
-function App() {
+import NavBar from './components/NavBar/NavBar';
+import Container from '@mui/material/Container'
+import { Typography } from '@mui/material';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
+function App() {  
+   
   return (
+      
+  <div className="App">
 
-  
-<div className="App">
- 
-  <NavBar/>
+    <Container>
+    <NavBar />
+    
+    <ItemListContainer />
 
-  <div className="container">
+    <br/>
+    <h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatem eum illum totam, iste distinctio quod tenetur beatae sequi quibusdam quia rerum eos nemo dolorum porro possimus odit facere amet.
+    </h2>
+    <Typography variant="h1" color="initial">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
+    </Typography>      
 
-    <header className="App-header">
+    <ItemListContainer />
+    </Container>      
 
-      <p>
-        BIENVENIDOS - REACT JS 2021
-      </p>      
-
-      <section>
-        <h2>
-          holA!
-        </h2>
-      </section>
-
-    </header>
-  </div>                                 
-
-  <section>
-    <h3>
-      hola !
-    </h3>
-  </section>
-
-  <MiModulo/>   
-
-</div>
-
+  </div>
   );
 }
-
-console.log("HGFGOKDFOGHK");
 
 export default App;

@@ -1,7 +1,7 @@
 INICIAR APP EN REACT
 
 - npm install -g create-react-app
-- create -react-app myapp
+- create-react-app myapp
 - npm install
 
 Una vez instalado
