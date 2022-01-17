@@ -1,9 +1,9 @@
 import './App.css';
 
 import NavBar from './components/NavBar/NavBar';
-import Container from '@mui/material/Container'
 import { Typography } from '@mui/material';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Header from './components/Header/Header';
 
 function App() {  
    
@@ -11,12 +11,14 @@ function App() {
       
   <div className="App">
 
-    <Container>
-    <NavBar />
     
-    <ItemListContainer />
+    <NavBar />    
+    <Header />
 
     <br/>
+    <ItemListContainer />
+    <br/>
+
     <h2>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatem eum illum totam, iste distinctio quod tenetur beatae sequi quibusdam quia rerum eos nemo dolorum porro possimus odit facere amet.
     </h2>
@@ -29,8 +31,7 @@ function App() {
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
     </Typography>      
 
-    <ItemListContainer />
-    </Container>      
+          
 
   </div>
   );

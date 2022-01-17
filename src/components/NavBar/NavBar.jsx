@@ -25,7 +25,13 @@ const NavBar = () => {
     <AppBar elevation={0} position='sticky' sx={{backgroundColor:'white'}}>
       <Toolbar>
 
-        <Box sx={{display: "flex", justifyContent: "space-between", width: "100%", alignItems: "center"}} component='div'>
+        <Box sx={{
+          display: "flex", 
+          justifyContent: "space-between", 
+          width: "100%", 
+          alignItems: "center"}} 
+          component="div"
+        >
           
           {/* Logo */}
           <Box sx={{padding: "15px"}}>   
