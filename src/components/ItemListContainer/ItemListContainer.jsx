@@ -1,20 +1,17 @@
-import { Typography } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = () => {
     return (
-
-        <>
         
-        <Typography /* variant='h2' color='red' */>
-            Item List Container     
-        </Typography>
+        <Container sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
+            
+            <ItemList />
 
-        <ItemCount />
-
-        </>
-      
+        </Container>
+              
     )
 }
 

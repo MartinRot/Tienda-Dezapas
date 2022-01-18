@@ -30,7 +30,7 @@ function ItemCount () {
    
     return (
     
-        <Box sx={{flex: '0 0 50%', maxWidth: '50%', textAlign: '-webkit-center', backgroundColor: '#F5ECA0' }}>
+        <Box sx={{flex: '0 0 50%', maxWidth: '40%', textAlign: '-webkit-center', backgroundColor: '#white' }}>
 
             <Box>
                 <Typography className='product' component='h6'>
