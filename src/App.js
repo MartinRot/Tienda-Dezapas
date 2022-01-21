@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import { Typography } from '@mui/material';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Header from './components/Header/Header';
+import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
 
 function App() {  
    
@@ -17,6 +18,8 @@ function App() {
 
     <br/>
     <ItemListContainer />
+    <br/>
+    <ItemDetailContainer />
     <br/>
 
     <h2>

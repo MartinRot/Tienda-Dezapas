@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Card, CardActionArea, CardContent, CardMedia, CircularProgress, Typography } from '@mui/material'
+import { CircularProgress } from '@mui/material'
 import Item from './Item'
 import { getProductos } from '../../baseDeDatos'
 

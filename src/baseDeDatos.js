@@ -46,6 +46,13 @@ export const products = [
 //Simula la peticion a la base de datos con 2s de retraso
   export function getProductos () {
     return new Promise ((resolve, reject) => {
-      setTimeout(() => resolve(products), 2000);
+      setTimeout(() => resolve(products), 5000);
+    })
+  };
+
+  //Simula la peticion a la base de datos con 2s de retraso
+  export function getItems () {
+    return new Promise ((resolve, reject) => {
+      setTimeout(() => resolve(products[1]), 2000);
     })
   };

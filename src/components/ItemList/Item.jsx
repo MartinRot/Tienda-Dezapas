@@ -9,7 +9,7 @@ const Item = ({ product }) => {
 
         <Card sx={{ flex: '0 0 50%', maxWidth: '40%', textAlign: '-webkit-center', backgroundColor: '#white', marginBottom: '1rem' }}>
         
-            <Box>
+            <Box>        
 
                 <CardMedia
                 component="img"
