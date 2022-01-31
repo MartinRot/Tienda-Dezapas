@@ -1,43 +1,60 @@
 import './App.css';
+//Iniciar json server -> npm run json-server 
 
 import NavBar from './components/NavBar/NavBar';
-import { Typography } from '@mui/material';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Header from './components/Header/Header';
-import ItemDetailContainer from './components/ItemDetail/ItemDetailContainer';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from './pages/HomePage';
+import ZapatillasPage from './pages/zapatillas/ZapatillasPage';
+import Hombre from './pages/zapatillas/Hombre';
+import Mujer from './pages/zapatillas/Mujer';
+import Nino from './pages/zapatillas/Nino';
+import Novedades from './pages/zapatillas/Novedades';
+import LanzamientoPage from './pages/LanzamientoPage';
+import SalesPage from './pages/SalesPage';
+import RastreadorPage from './pages/RastreadorPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import NotFoundPage from './pages/NotFoundPage';
 
-function App() {  
+
+function App() {    
    
   return (
       
-  <div className="App">
+  <BrowserRouter>
 
-    
-    <NavBar />    
-    <Header />
+    <NavBar />  
 
-    <br/>
-    <ItemListContainer />
-    <br/>
-    <ItemDetailContainer />
-    <br/>
+    <Routes>
 
-    <h2>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi voluptatem eum illum totam, iste distinctio quod tenetur beatae sequi quibusdam quia rerum eos nemo dolorum porro possimus odit facere amet.
-    </h2>
-    <Typography variant="h1" color="initial">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, natus. Inventore deserunt debitis itaque non provident saepe, earum porro delectus in illum temporibus accusantium quis, quae accusamus nisi molestias nihil.
-    </Typography>      
+      <Route path='/' > 
 
-          
+        <Route index element={< HomePage />} />
 
-  </div>
+        <Route path='/zapatillas'>
+          <Route index element={< ZapatillasPage />} />
+          <Route path='hombre' element={< Hombre />} />
+          <Route path='mujer' element={< Mujer />} />
+          <Route path='nino' element={< Nino />} />
+          <Route path='novedades' element={< Novedades />} />     
+          <Route path=":id" element={< ProductDetailPage />} />          
+        </Route>
+
+        <Route path='/lanzamiento' element={< LanzamientoPage />} />
+        <Route path='/sales' element={< SalesPage />} />
+        <Route path='/rastreador' element={< RastreadorPage />} />        
+     
+        <Route path='*' element={< NotFoundPage />} />
+      </Route>
+      
+    </Routes>  
+
+  </BrowserRouter> 
+
   );
 }
 
+
+
 export default App;
+
+

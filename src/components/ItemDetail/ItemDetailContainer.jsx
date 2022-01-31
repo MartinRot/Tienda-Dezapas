@@ -1,38 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { CircularProgress, Typography } from '@mui/material'
-import { getItems } from '../../baseDeDatos'
 import ItemDetail from './ItemDetail';
 import { Box } from '@mui/system';
-
-
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
+  const {id} = useParams();
   const [products, setProducts] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
+  useEffect(() => {    
 
-      setIsLoading(true)
+    const URL = 'http://localhost:3001/productos/'
+    setIsLoading(true)
 
-      const getData = async () => {
-
-          try {
-              //Si se resuelve
-              const result = await getItems();
-              setProducts(result)
-          }catch (error) {
-              //Si se rechaza
-              console.log("Error! ", error)
-          }finally{
-              setIsLoading(false)
-          }
-        };
-        
-        getData();
-      }, []);
-      
-      
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .finally(() => setIsLoading(false));  
+    
+    }, [id]);           
       
       return (
         
@@ -44,7 +32,9 @@ const ItemDetailContainer = () => {
 
       ) : (       
         <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
-          <ItemDetail {...products} />
+          
+          <ItemDetail {...products[id]} />
+          
         </Box>        
         )
       }

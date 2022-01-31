@@ -1,9 +1,11 @@
-import { Card, CardContent, CardMedia, Typography } from '@mui/material'
+import { Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount'
 
 const Item = ({ product }) => {
+    const navigate = useNavigate();
 
     return (
 
@@ -27,6 +29,8 @@ const Item = ({ product }) => {
                 </CardContent>
 
                 <ItemCount />
+                
+                <Button onClick={() => navigate(`/zapatillas/${product.id}`)}> Ver más </Button>                    
 
             </Box>
 

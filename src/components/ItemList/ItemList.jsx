@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CircularProgress } from '@mui/material'
 import Item from './Item'
-import { getProductos } from '../../baseDeDatos'
 
 const ItemList = () => {
 
@@ -10,23 +9,15 @@ const ItemList = () => {
 
     useEffect(() => {
 
+        const URL = 'http://localhost:3001/productos/'
+
         setIsLoading(true)
 
-        const getData = async () => {
-
-            try {
-                //Si se resuelve
-                const result = await getProductos();
-                setProducts(result)
-            }catch (error) {
-                //Si se rechaza
-                console.log("Error! ", error)
-            }finally{
-                setIsLoading(false)
-            }
-        };
-
-        getData();
+        fetch(URL)
+            .then((res) => res.json())
+            .then((data) => setProducts(data))
+            .finally(() => setIsLoading(false));
+      
     }, []);
 
     return (
@@ -34,7 +25,7 @@ const ItemList = () => {
     <>
           {isLoading ? ( 
 
-              <CircularProgress />
+            <CircularProgress />
 
           ) : (
             products.map((product) => {

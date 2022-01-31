@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
+import "./styles.css";
 
 import { AppBar, IconButton, makeStyles, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { Box } from '@mui/system';
@@ -35,7 +37,7 @@ const NavBar = () => {
           
           {/* Logo */}
           <Box sx={{padding: "15px"}}>   
-            <img src={logo} alt="" width={"140px"} height={"106px"}/>
+            <Link to='/'> <img src={logo} alt="" width={"140px"} height={"106px"}/> </Link>
           </Box>
 
           {/* Links */}
@@ -47,7 +49,8 @@ const NavBar = () => {
               aria-expanded={openMenu ? "true" : undefined} 
               onClick={handleClick}
             >
-              Zapatillas
+               Zapatillas 
+
             </Typography>
             {/* Dropdown Items */}
             <Menu 
@@ -56,24 +59,58 @@ const NavBar = () => {
               open={openMenu}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>Hombre</MenuItem>
-              <MenuItem onClick={handleClose}>Mujer</MenuItem>
-              <MenuItem onClick={handleClose}>Niños</MenuItem>
-              <MenuItem onClick={handleClose}>Novedades</MenuItem>
-              <MenuItem onClick={handleClose}>Todo</MenuItem>
+              <MenuItem onClick={handleClose}>
+                <Link to='/zapatillas/hombre'> 
+                  <Typography sx={{cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
+                    Hombre 
+                  </Typography>
+                </Link>
+              </MenuItem>
+
+              <MenuItem onClick={handleClose}>
+                <Link to='/zapatillas/mujer'> 
+                  <Typography sx={{cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
+                    Mujer 
+                  </Typography> 
+                </Link>
+              </MenuItem>
+
+              <MenuItem onClick={handleClose}>
+                <Link to='/zapatillas/nino'> 
+                  <Typography sx={{cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
+                    Niño 
+                  </Typography> 
+                </Link>
+              </MenuItem>
+
+              <MenuItem onClick={handleClose}>
+                <Link to='/zapatillas/novedades'> 
+                  <Typography sx={{marginRight:'20px', cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
+                    Novedades 
+                  </Typography> 
+                </Link>
+              </MenuItem>
+
+              <MenuItem onClick={handleClose}>
+                <Link to='/zapatillas'> 
+                  <Typography sx={{cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
+                    Todo 
+                  </Typography> 
+                </Link>
+              </MenuItem>
+
             </Menu>
 
-
             <Typography sx={{marginRight:'20px', cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
-              Lanzamiento
+              <Link to='/lanzamiento'> Lanzamiento </Link>
             </Typography>
 
             <Typography sx={{marginRight:'20px', cursor:'pointer', color:'red', fontWeight:'800'}}>
-              Sales
+              <Link to='/sales'> Sales </Link>
             </Typography>
 
             <Typography sx={{marginRight:'20px', cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
-              Rastrea tu pedido
+              <Link to='rastreador'> Rastrea tu pedido </Link>
             </Typography>
 
           </Box>
@@ -87,10 +124,7 @@ const NavBar = () => {
             
           </Box>
 
-
-
-        </Box>
-        
+        </Box>        
    
       </Toolbar>      
     </AppBar> 

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Card, CardMedia, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ ...products }) => {
   return (
@@ -33,6 +34,9 @@ const ItemDetail = ({ ...products }) => {
                 <Box>{/* Info */}
                     <Typography>Descripcion: {products.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, deleniti? Animi atque sapiente est at dolore et quaerat maxime minima autem odit molestias veniam esse cum temporibus nam, optio nobis!</Typography>
                 </Box>
+
+                <ItemCount />
+                
             </Box>
 
         </Box>
