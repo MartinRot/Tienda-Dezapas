@@ -8,18 +8,19 @@ import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
 import SelectSize from '../ItemListContainer/SelectSize';
 
-function ItemCount () { 
-    
-    const stockDisponible = 5;
-        
-    const [count, setCount] = React.useState(0);
+function ItemCount ( { ...product } ) { 
 
+    const stockDisponible = product.stock;
+    
+    const [count, setCount] = React.useState(0);
+    
     const sumar = () => {
         if (stockDisponible > 0 && stockDisponible > count){
-            setCount (count + 1)
+            /* setCount (count + 1) */
+            setCount((prevState) => prevState + 1)
         }        
     }
-
+    
     const restar = () => {        
         if( count == 0 ){
             return count
@@ -27,9 +28,9 @@ function ItemCount () {
             setCount (count - 1)
         }
     }
-   
-    return (
     
+    return (
+        
         <Box sx={{flex: '0 0 50%', maxWidth: '40%', textAlign: '-webkit-center', backgroundColor: '#white' }}>
 
             <Box>
@@ -38,6 +39,7 @@ function ItemCount () {
                 </Typography>
                 <SelectSize />
             </Box>
+            
 
             <Box>
                 <Typography className='product' component='h6'>
@@ -57,12 +59,13 @@ function ItemCount () {
 
             </Card>
 
-            <Button border='dark' variant='secondary-outlined' style={{margin: '0.5rem 0.5rem 0.5rem 0.5rem', padding: '10px' }}><h6>Anadir al carrito</h6></Button>
+            {/* El onClick del boton "añadir al carrito debe pushear el icono del carrito" */}
+            <Button border='dark' variant='secondary-outlined' style={{margin: '0.5rem 0.5rem 0.5rem 0.5rem', padding: '10px' }} ><h6>Anadir al carrito</h6></Button>
             <Button variant='secondary-outlined' style={{margin: '0.5rem 0.5rem 0.5rem 0.5rem', padding: '10px' }}><h6>Comprar ahora</h6></Button>
 
             <Box>
                 <Typography className='product' component='h6'>
-                    Stock disponible {stockDisponible}
+                    Stock disponible {stockDisponible}                    
                 </Typography>
             </Box>
 

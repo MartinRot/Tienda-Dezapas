@@ -5,6 +5,8 @@
       "name": "NIKE AIR FORCE LOW",
       "description": "Estas zapatillas estan buenisimas",
       "price": 10220,
+      "stock": 12,
+      "categoria": "hombre",
       "img": "https://images.unsplash.com/photo-1597949992171-689c5673b936?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2073&q=80"
     },
     {
@@ -12,6 +14,8 @@
       "name": "NIKE AIR YEEZY ZEN GREY",
       "description": "Estas zapatillas estan buenisimas",
       "price": 7820,
+      "stock": 7,
+      "categoria": "mujer",
       "img": "https://images.unsplash.com/photo-1580894529660-d55c66eefee7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"  
     },
     {
@@ -19,6 +23,8 @@
       "name": "ADIDAS RESPONSE CL BEIGE",
       "description": "Estas zapatillas estan buenisimas",
       "price": 9675,
+      "stock": 19,
+      "categoria": "niño",      
       "img": "https://images.unsplash.com/photo-1580902394724-b08ff9ba7e8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
     },
     {
@@ -26,6 +32,8 @@
       "name": "NEW BALANCE 237 HIGHER LEARNIN MARRON",
       "description": "Estas zapatillas estan buenisimas",
       "price": 3458,
+      "stock": 2,
+      "categoria": "novedades",
       "img": "https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
     },
     {
@@ -33,6 +41,8 @@
       "name": "CONVERSE PRO LEATHER HI GRIS",
       "description": "Estas zapatillas estan buenisimas",
       "price": 9999,
+      "stock": 5,
+      "categoria": "hombre",
       "img": "https://images.unsplash.com/photo-1554192833-a5cd504427dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
     },
     {
@@ -40,6 +50,8 @@
       "name": "PUMA SUEDE SANTA CRUZ SHARK VERDE",
       "description": "Estas zapatillas estan buenisimas",
       "price": 9999,
+      "stock": 171,
+      "categoria": "hombre",
       "img": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
     }
   ]

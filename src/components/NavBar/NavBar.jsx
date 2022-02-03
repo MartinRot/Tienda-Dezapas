@@ -81,15 +81,7 @@ const NavBar = () => {
                     Niño 
                   </Typography> 
                 </Link>
-              </MenuItem>
-
-              <MenuItem onClick={handleClose}>
-                <Link to='/zapatillas/novedades'> 
-                  <Typography sx={{marginRight:'20px', cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
-                    Novedades 
-                  </Typography> 
-                </Link>
-              </MenuItem>
+              </MenuItem>              
 
               <MenuItem onClick={handleClose}>
                 <Link to='/zapatillas'> 
@@ -102,7 +94,7 @@ const NavBar = () => {
             </Menu>
 
             <Typography sx={{marginRight:'20px', cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
-              <Link to='/lanzamiento'> Lanzamiento </Link>
+              <Link to='/novedades'> Novedades </Link>
             </Typography>
 
             <Typography sx={{marginRight:'20px', cursor:'pointer', color:'red', fontWeight:'800'}}>
@@ -118,9 +110,9 @@ const NavBar = () => {
           {/* Button links */}
           <Box sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
 
-            <Profile />           
-
-            <CartWidget />              
+            
+          <Link to='/profile'> <Profile /> </Link>   
+          <Link to='/checkout'> <CartWidget /> </Link>   
             
           </Box>
 

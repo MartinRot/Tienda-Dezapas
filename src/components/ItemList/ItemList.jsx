@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CircularProgress } from '@mui/material'
 import Item from './Item'
+import "./styles.css"
 
 const ItemList = () => {
 
@@ -22,7 +23,12 @@ const ItemList = () => {
 
     return (
         
-    <>
+    <>         
+
+          <h1 className='title'> - PRODUCTOS -</h1>
+
+          <div className='productos'>
+
           {isLoading ? ( 
 
             <CircularProgress />
@@ -32,6 +38,8 @@ const ItemList = () => {
                 return <Item key={product.id} product={product} />
               })
           )}
+
+          </div>
 
     </>       
         

@@ -7,7 +7,7 @@ const CartWidget = () => {
     return (
         
         <IconButton>
-            <Badge badgeContent={4} sx={{color:'rgba(0,0,0,.7)'}}>
+            <Badge badgeContent={0} sx={{color:'rgba(0,0,0,.7)'}}>
             <ShoppingCartOutlinedIcon sx={{color:'rgba(0,0,0,.7)'}}/>
             </Badge>    
         </IconButton> 

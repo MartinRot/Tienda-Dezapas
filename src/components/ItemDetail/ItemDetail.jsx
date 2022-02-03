@@ -35,7 +35,7 @@ const ItemDetail = ({ ...products }) => {
                     <Typography>Descripcion: {products.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, deleniti? Animi atque sapiente est at dolore et quaerat maxime minima autem odit molestias veniam esse cum temporibus nam, optio nobis!</Typography>
                 </Box>
 
-                <ItemCount />
+                < ItemCount { ...products } />
                 
             </Box>
 
