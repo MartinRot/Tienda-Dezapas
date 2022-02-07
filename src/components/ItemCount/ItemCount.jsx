@@ -8,12 +8,10 @@ import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
 import SelectSize from '../ItemListContainer/SelectSize';
 
-function ItemCount ( { ...product } ) { 
+function ItemCount ( { count, setCount, ...product } ) { 
 
     const stockDisponible = product.stock;
-    
-    const [count, setCount] = React.useState(0);
-    
+        
     const sumar = () => {
         if (stockDisponible > 0 && stockDisponible > count){
             /* setCount (count + 1) */
@@ -39,7 +37,6 @@ function ItemCount ( { ...product } ) {
                 </Typography>
                 <SelectSize />
             </Box>
-            
 
             <Box>
                 <Typography className='product' component='h6'>
@@ -57,11 +54,7 @@ function ItemCount ( { ...product } ) {
                 
                 <Button onClick={sumar} style={{ backgroundColor: 'white', color: 'black', border: '0' }} className='buttonCounter'> <AddIcon /></Button>
 
-            </Card>
-
-            {/* El onClick del boton "añadir al carrito debe pushear el icono del carrito" */}
-            <Button border='dark' variant='secondary-outlined' style={{margin: '0.5rem 0.5rem 0.5rem 0.5rem', padding: '10px' }} ><h6>Anadir al carrito</h6></Button>
-            <Button variant='secondary-outlined' style={{margin: '0.5rem 0.5rem 0.5rem 0.5rem', padding: '10px' }}><h6>Comprar ahora</h6></Button>
+            </Card>            
 
             <Box>
                 <Typography className='product' component='h6'>
