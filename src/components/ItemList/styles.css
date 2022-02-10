@@ -46,6 +46,12 @@
 .producto__footer .price{
     font-size: 1.5rem;
     color: #1a202c;
+    text-align: center;
+}
+.producto__footer .disponibles{
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 0;
 }
 .producto .buttom{
     width: 100%;

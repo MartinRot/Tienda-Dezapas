@@ -109,10 +109,9 @@ const NavBar = () => {
 
           {/* Button links */}
           <Box sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-
             
           <Link to='/profile'> <Profile /> </Link>   
-          <Link to='/checkout'> <CartWidget /> </Link>   
+          <Link to='/carrito'> <CartWidget /> </Link>   
             
           </Box>
 

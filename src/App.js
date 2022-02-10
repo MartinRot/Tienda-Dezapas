@@ -13,14 +13,16 @@ import RastreadorPage from './pages/RastreadorPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import NotFoundPage from './pages/NotFoundPage';
 import CheckoutPage from './pages/CheckoutPage';
-
+import CartPage from './pages/CartPage';
+import { CartProvider } from './context/CartContext';
 
 function App() {    
    
   return (
 
   <div className='App'>
-      
+     
+    <CartProvider>
     <BrowserRouter>
 
       <NavBar />  
@@ -39,17 +41,18 @@ function App() {
             <Route path=":id" element={< ProductDetailPage />} />          
           </Route>
 
-          <Route path='novedades' element={< Novedades />} /> 
+          <Route path='/novedades' element={< Novedades />} /> 
           <Route path='/sales' element={< SalesPage />} />
           <Route path='/rastreador' element={< RastreadorPage />} />
-          <Route path='checkout' element={< CheckoutPage /> } />        
+          <Route path='/checkout' element={< CheckoutPage /> } />        
+          <Route path='/carrito' element={< CartPage /> } />    
       
           <Route path='*' element={< NotFoundPage />} />
         </Route>
         
-      </Routes>  
-
-    </BrowserRouter> 
+      </Routes>
+    </BrowserRouter>    
+    </CartProvider>
 
   </div>
 

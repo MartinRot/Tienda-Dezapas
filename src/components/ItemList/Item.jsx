@@ -1,17 +1,27 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount'
-import IMG from '../../images/img02.jpg'
+import React, { useState } from 'react'
+import { useContext } from 'react'
 import "./styles.css"
-import { Button } from '@mui/material'
+import { Link, useNavigate } from 'react-router-dom'
+import IMG from '../../images/img02.jpg'
+import { CartContext } from '../../context/CartContext'
+import { useCart } from '../../context/CartContext';
 
 const Item = ({ product }) => {
-    const navigate = useNavigate();
+    const navigate = useNavigate();    
+    const { addItem } = useCart();  
+      
+    
+    const [ sinStock, setSinStock ] = useState(false);
 
+    const handleClick = () => {    
+
+        addItem(product, 1, setSinStock)  
+    
+    }
+    
     return (
-
-        <>                        
-            
+        
+        <>                      
                 <div className='producto'>
 
                     <a href="#">
@@ -25,14 +35,28 @@ const Item = ({ product }) => {
                         <h1> {product.name} </h1>
                         <p> {product.description} </p>
                         <p className='price'>${product.price}</p>
+                        
+                        { !sinStock ? (
+                            <p className='disponibles'> Stock Disponible {product.stock - product.cantidad} unidades</p>
+                        ) : (
+                            <p className='disponibles' style={{color:'red'}}> No hay Stock Disponible </p>
+                        )}
+                        
                     </div>
 
                     <div className='buttom'>
 
-                        <button className='btn'>
-                            Añadir al carrito
-                        </button>
-
+                        {/* Si no hay stock añadir al carrito cambiaria a ver carrito */}
+                        { !sinStock ? ( 
+                            <button onClick={ handleClick } className='btn'>
+                                Añadir al carrito 
+                            </button>
+                        ) : (                                                         
+                            <button className='btn'>
+                                <Link to='/carrito'> Ir al carrito </Link>  
+                            </button>
+                        )}                                             
+                     
                         <div>
                             <a onClick={() => navigate(`/zapatillas/${product.id}`)} className='btn'>
                                 Ver más
@@ -47,36 +71,6 @@ const Item = ({ product }) => {
 
 
 
-
-
-
-/* 
-        <Card sx={{ flex: '0 0 50%', maxWidth: '40%', textAlign: '-webkit-center', backgroundColor: '#white', marginBottom: '1rem' }}>
-        
-            <Box>        
-
-                <CardMedia
-                component="img"
-                height="140"
-                image={product.img}
-                alt={product.name}
-                />
-                
-                <CardContent>
-
-                    <Typography> {product.name}</Typography>
-                    <Typography> {product.description}</Typography>
-                    <Typography sx={{color:'red'}}>Precio: ${product.price}</Typography>
-
-                </CardContent>
-
-                <ItemCount { ...product }/>
-                
-                <Button onClick={() => navigate(`/zapatillas/${product.id}`)}> Ver más </Button>                    
-
-            </Box>
-
-        </Card> */
         
     )
 }

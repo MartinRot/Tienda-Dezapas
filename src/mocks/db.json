@@ -2,6 +2,7 @@
   "productos": [
     {
       "id": 0,
+      "cantidad" : 0,
       "name": "NIKE AIR FORCE LOW",
       "description": "Estas zapatillas estan buenisimas",
       "price": 10220,
@@ -11,6 +12,7 @@
     },
     {
       "id": 1,
+      "cantidad" : 0,
       "name": "NIKE AIR YEEZY ZEN GREY",
       "description": "Estas zapatillas estan buenisimas",
       "price": 7820,
@@ -20,6 +22,7 @@
     },
     {
       "id": 2,
+      "cantidad" : 0,
       "name": "ADIDAS RESPONSE CL BEIGE",
       "description": "Estas zapatillas estan buenisimas",
       "price": 9675,
@@ -29,6 +32,7 @@
     },
     {
       "id": 3,
+      "cantidad" : 0,
       "name": "NEW BALANCE 237 HIGHER LEARNIN MARRON",
       "description": "Estas zapatillas estan buenisimas",
       "price": 3458,
@@ -38,6 +42,7 @@
     },
     {
       "id": 4,
+      "cantidad" : 0,
       "name": "CONVERSE PRO LEATHER HI GRIS",
       "description": "Estas zapatillas estan buenisimas",
       "price": 9999,
@@ -47,9 +52,10 @@
     },
     {
       "id": 5,
+      "cantidad" : 0,
       "name": "PUMA SUEDE SANTA CRUZ SHARK VERDE",
       "description": "Estas zapatillas estan buenisimas",
-      "price": 9999,
+      "price": 12600,
       "stock": 171,
       "categoria": "hombre",
       "img": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"

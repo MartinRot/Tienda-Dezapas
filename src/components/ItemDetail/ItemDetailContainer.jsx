@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {    
 
-    const URL = 'http://localhost:3001/productos/'
+    const URL = `http://localhost:3001/productos/${id}`
     setIsLoading(true)
 
     fetch(URL)
@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
       ) : (       
         <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
           
-          <ItemDetail {...products[id]} />
+          <ItemDetail products={ products } />
           
         </Box>        
         )
