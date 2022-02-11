@@ -1,22 +1,19 @@
 import React, { useState } from 'react'
-import { useContext } from 'react'
 import "./styles.css"
 import { Link, useNavigate } from 'react-router-dom'
-import IMG from '../../images/img02.jpg'
-import { CartContext } from '../../context/CartContext'
 import { useCart } from '../../context/CartContext';
 
 const Item = ({ product }) => {
     const navigate = useNavigate();    
-    const { addItem } = useCart();  
-      
-    
-    const [ sinStock, setSinStock ] = useState(false);
+    const { addItem } = useCart();      
+    const [ inCart, setInCart ] = useState(false);
+    const IMG = product.img;
 
     const handleClick = () => {    
 
-        addItem(product, 1, setSinStock)  
-    
+        addItem(product, 1);
+        setInCart(true);
+        
     }
     
     return (
@@ -36,18 +33,16 @@ const Item = ({ product }) => {
                         <p> {product.description} </p>
                         <p className='price'>${product.price}</p>
                         
-                        { !sinStock ? (
-                            <p className='disponibles'> Stock Disponible {product.stock - product.cantidad} unidades</p>
-                        ) : (
-                            <p className='disponibles' style={{color:'red'}}> No hay Stock Disponible </p>
-                        )}
+                        { inCart ? (
+                            <p className='disponibles' style={{color:'green'}}> Producto agregado al carrito! </p>                            
+                        ) : (<></>)}
                         
                     </div>
 
                     <div className='buttom'>
 
                         {/* Si no hay stock añadir al carrito cambiaria a ver carrito */}
-                        { !sinStock ? ( 
+                        { !inCart ? ( 
                             <button onClick={ handleClick } className='btn'>
                                 Añadir al carrito 
                             </button>

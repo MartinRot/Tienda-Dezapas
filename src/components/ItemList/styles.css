@@ -1,12 +1,12 @@
 
 .title{
     font-size: 2rem;
-    padding: 3rem 0 0 0;
+    padding: .5rem 0 0 0;
     color: rgba(0,0,0,.5);
     font-weight: 600;    
 }
 .productos {
-    padding: 5rem 1rem;
+    padding: 3rem 1rem;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));

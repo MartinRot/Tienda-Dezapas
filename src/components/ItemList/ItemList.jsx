@@ -9,7 +9,6 @@ const ItemList = () => {
     const [products, setProducts] = useState([])
     const [isLoading, setIsLoading] = useState(false)
 
-
   //base de datos con json-server
     useEffect(() => {
 
@@ -49,12 +48,9 @@ const ItemList = () => {
 
      }, []); */
 
-
-
     return (
         
     <>         
-
           <h1 className='title'> - PRODUCTOS -</h1>
 
           <div className='productos'>
@@ -70,7 +66,6 @@ const ItemList = () => {
           )}
 
           </div>
-
     </>       
         
     )
