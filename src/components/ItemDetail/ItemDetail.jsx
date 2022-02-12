@@ -4,6 +4,8 @@ import { Box } from '@mui/system';
 import ItemCount from '../ItemCount/ItemCount';
 import Button from 'react-bootstrap/Button';
 import { useCart } from '../../context/CartContext';
+import "./styles.css"
+
 
 const ItemDetail = ({ products }) => {
     
@@ -17,7 +19,7 @@ const ItemDetail = ({ products }) => {
     }
 
   return (
-    <Card sx={{
+    <Card className='container' sx={{
         display: '-ms-flexbox,',
         display: 'flex',
         flexWrap: 'wrap',

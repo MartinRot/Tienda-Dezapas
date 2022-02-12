@@ -60,7 +60,7 @@ const NavBar = () => {
               onClose={handleClose}
             >
               <MenuItem onClick={handleClose}>
-                <Link to='/zapatillas/hombre'> 
+                <Link to='/zapatillas/categoria/hombre'> 
                   <Typography sx={{cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
                     Hombre 
                   </Typography>
@@ -68,7 +68,7 @@ const NavBar = () => {
               </MenuItem>
 
               <MenuItem onClick={handleClose}>
-                <Link to='/zapatillas/mujer'> 
+                <Link to='/zapatillas/categoria/mujer'> 
                   <Typography sx={{cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
                     Mujer 
                   </Typography> 
@@ -76,7 +76,7 @@ const NavBar = () => {
               </MenuItem>
 
               <MenuItem onClick={handleClose}>
-                <Link to='/zapatillas/nino'> 
+                <Link to='/zapatillas/categoria/nino'> 
                   <Typography sx={{cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
                     Niño 
                   </Typography> 
