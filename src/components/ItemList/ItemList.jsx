@@ -11,6 +11,7 @@ const ItemList = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null);
   const { categoria } = useParams(); 
+  const { subcategoria } = useParams;
 
 //Base de datos con firebase
      useEffect(() => {
@@ -48,13 +49,13 @@ const ItemList = () => {
 
     return (
         
-    <>         
+    <>    
           <h1 className='title'> - PRODUCTOS -</h1>
           <h1 className='title'> { categoria } </h1>
-          <div className='productos'>
+          <div className='productos'>          
 
           {isLoading ? ( 
-
+            
             <CircularProgress />
 
           ) : (

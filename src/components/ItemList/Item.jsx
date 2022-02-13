@@ -10,10 +10,8 @@ const Item = ({ product }) => {
     const IMG = product.img;
 
     const handleClick = () => {    
-
         addItem(product, 1);
-        setInCart(true);
-        
+        setInCart(true);        
     }
     
     return (
@@ -62,10 +60,6 @@ const Item = ({ product }) => {
 
                 </div>
         </>
-
-
-
-
         
     )
 }
