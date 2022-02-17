@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import "./styles.css";
 
-import { AppBar, IconButton, makeStyles, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
+import { AppBar, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { Box } from '@mui/system';
 import logo from './logo.png'
 import CartWidget from '../CartWidget/CartWidget';

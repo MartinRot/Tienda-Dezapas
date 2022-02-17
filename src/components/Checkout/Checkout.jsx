@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import "./styles.css"
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { useCart } from '../../context/CartContext';
+import { getFirestore } from '../../firebase';
+import { useNavigate } from 'react-router-dom';
 
 const Checkout = () => {
-  
+
+    const { cart, precioTotal, clearCart } = useCart();  
     const [formularioEnviado, cambiarFormularioEnviado] = useState(false);
-  
+    let navigate = useNavigate();
+
     return (
     
     <div className="contenedor">
@@ -36,19 +41,37 @@ const Checkout = () => {
             return errores;
         }}
 
-        onSubmit={(valores, {resetForm}) => { //La logica cuando envias el formulario
+        onSubmit={( valores ) => { //La logica cuando envias el formulario
 
-            console.log("Formulario enviado");
-            console.log(valores.nombre);
+            console.log("Formulario enviado");            
 
-            resetForm();
+            const nombre=valores.nombre
+            const correo=valores.correo
+            const comentario=valores.comentario
+
+            const newOrder = { 
+                buyer: { nombre, correo, comentario }, 
+                items: cart, 
+                total: precioTotal(),
+            };
+
+            const db = getFirestore()
+            db.collection('orders')
+                .add(newOrder)
+                .then((res) => {
+                    console.log("Compra exitosa", res.id)
+                    navigate(`${res.id}`)
+                })
+                .catch((err)=> console.log("Hubo un error", err));
+
+            clearCart();
             cambiarFormularioEnviado(true);
-            setTimeout(() => cambiarFormularioEnviado(false), 2000)
-
+            setTimeout(() => cambiarFormularioEnviado(false), 5000)
         }}
     >
+
         {( { errors } ) => (
-            <Form className="formulario">               
+            <Form className="formulario" >               
 
                 <div>
                     <label htmlFor="nombre">Nombre</label>
@@ -56,7 +79,7 @@ const Checkout = () => {
                         type="text" 
                         id="nombre" 
                         name="nombre" 
-                        placeholder="Nombre" 
+                        placeholder="Nombre"                  
                     />
                     <ErrorMessage name="nombre" component={() => (
                         <div className="error">{ errors.nombre } </div>
@@ -70,7 +93,7 @@ const Checkout = () => {
                         type="email" 
                         id="correo" 
                         name="correo" 
-                        placeholder="correo@correo.com"                             
+                        placeholder="correo@correo.com"                           
                     />
 
                     <ErrorMessage name="correo" component={() => (
@@ -80,24 +103,21 @@ const Checkout = () => {
                 </div>
 
                 <div>
-                    <Field name="comentario" as="textarea" placeholder="Dejanos tu comentario" />
+                    <Field      
+                        type="text"       
+                        name="comentario" 
+                        as="textarea" 
+                        placeholder="Dejanos tu comentario"
+                    />
                 </div>
 
-                <button type="submit">Enviar</button>
+                <button type="submit">Finalizar compra</button>
 
-
-             {/*    <div id='contenedorCajita'>
-                    <div id='cajita'></div>
-                </div> */}
-
-
-                {formularioEnviado && <p className="exito">Formulario enviado con exito!</p>}
+                {formularioEnviado && <p className="exito">Compra realizada con exito!</p>}
             </Form>
         )}        
 
     </Formik>       
-
-
     
     </div>
 
