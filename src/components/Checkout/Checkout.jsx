@@ -4,6 +4,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { useCart } from '../../context/CartContext';
 import { getFirestore } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
+import firebase from "firebase";
+import 'firebase/firestore'
 
 const Checkout = () => {
 
@@ -18,7 +20,8 @@ const Checkout = () => {
     <Formik
         initialValues={{
             nombre: '',
-            correo: ''
+            correo: '',
+            comentario: ''
         }}
         validate={(valores) => {
 
@@ -38,32 +41,38 @@ const Checkout = () => {
                 errores.correo = 'El correo solo puede contener letras, numeros, puntos, guiones y guion bajo'
             }
 
+            // Validacion comentario
+            if(!valores.comentario){
+                errores.comentario = 'Por favor ingresa un comentario'
+            }                
+
             return errores;
         }}
 
-        onSubmit={( valores ) => { //La logica cuando envias el formulario
-
-            console.log("Formulario enviado");            
+        onSubmit={( valores ) => {         
 
             const nombre=valores.nombre
             const correo=valores.correo
-            const comentario=valores.comentario
+            const comentario=valores.comentario                       
 
             const newOrder = { 
-                buyer: { nombre, correo, comentario }, 
+                nombre: nombre,
+                correo: correo,
+                comentario: comentario,
+                fecha: firebase.firestore.Timestamp.fromDate(new Date()),       
                 items: cart, 
                 total: precioTotal(),
+                estado: "Estamos preparando tu pedido"
             };
 
             const db = getFirestore()
             db.collection('orders')
                 .add(newOrder)
                 .then((res) => {
-                    console.log("Compra exitosa", res.id)
                     navigate(`${res.id}`)
                 })
                 .catch((err)=> console.log("Hubo un error", err));
-
+            
             clearCart();
             cambiarFormularioEnviado(true);
             setTimeout(() => cambiarFormularioEnviado(false), 5000)
@@ -104,11 +113,16 @@ const Checkout = () => {
 
                 <div>
                     <Field      
-                        type="text"       
+                        type="text"
+                        id="comentario"       
                         name="comentario" 
                         as="textarea" 
                         placeholder="Dejanos tu comentario"
                     />
+
+                    <ErrorMessage name="comentario" component={() => (
+                        <div className="error">{ errors.comentario } </div>
+                    )} />
                 </div>
 
                 <button type="submit">Finalizar compra</button>
@@ -125,6 +139,3 @@ const Checkout = () => {
 };
 
 export default Checkout;
-
-
-/* Creditos -> https://www.youtube.com/watch?v=2Xs1DAzYHXY */

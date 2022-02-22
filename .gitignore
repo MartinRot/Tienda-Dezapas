@@ -19,6 +19,7 @@
 .env.production.local
 .cheat-sheet.txt
 .env
+.agregar-prod-firestore
 
 npm-debug.log*
 yarn-debug.log*

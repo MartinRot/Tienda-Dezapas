@@ -64,10 +64,11 @@
     margin: 1rem;
 }
 .buttom .btn{
+    margin-right: 13px;
     border: none;
     outline: 0;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 5px;    
 }
 .buttom button{
     background-color: rgb(57, 125, 167);

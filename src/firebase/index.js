@@ -11,7 +11,6 @@ import 'firebase/firestore'
     appId: "1:735173958047:web:489b8d571ed3a10ddf85aa"
   }; */
 
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,

@@ -1,18 +1,18 @@
 import React from 'react';
-import { Card, CardMedia, Typography } from '@mui/material';
+import { Card, CardMedia, Typography, Button } from '@mui/material';
 import { Box } from '@mui/system';
 import ItemCount from '../ItemCount/ItemCount';
-import Button from 'react-bootstrap/Button';
 import { useCart } from '../../context/CartContext';
 import "./styles.css"
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({ products }) => {
     
     /* State del counter */
-    const [count, setCount] = React.useState(0);
+    const [count, setCount] = React.useState(1);
     
-    const { cart , addItem } = useCart();
+    const { addItem } = useCart();
 
     const handleClick = () => {        
         addItem(products, count)
@@ -20,44 +20,47 @@ const ItemDetail = ({ products }) => {
 
   return (
     <Card className='container' sx={{
-        display: '-ms-flexbox,',
+        display: '-ms-flexbox',
         display: 'flex',
+        justifyContent: 'space-around',
         flexWrap: 'wrap',
         marginRight: '-15px',
-        marginLeft: '-15px'
+        marginLeft: '-15px',
+        marginTop: '80px'
         }}>
         
-        <Box sx={{display: 'flex'}}>
+        <Box sx={{display: 'flex', justifyContent: 'space-around' }}>
           
-            <Box class="col-md-7 col-product-image">
+            <Box>
                 <CardMedia
                     component="img"
                     height="400"
                     image={products.img}
                     alt={products.name}
-                    align
                 />
             </Box>
 
-            <Box class="col-md-5 col-product-info" sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center!important', alignContent: 'center!important', padding: '2px'}}>
+            <Box class="info-detail">
+
                 <Box>{/* Header */}                    
-                    <Typography sx={{fontSize: '1.5rem', fontWeight: '600'}}>{products.name}</Typography> 
-                    <Typography sx={{color:'red'}}>Precio: ${products.price}</Typography> 
+                    <Typography class="info-header">{products.name}</Typography> 
+                    <Typography class="precio-header">Precio: ${products.price}</Typography> 
                 </Box>
 
-                <Box>{/* Info */}
-                    <Typography>Descripcion: {products.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, deleniti? Animi atque sapiente est at dolore et quaerat maxime minima autem odit molestias veniam esse cum temporibus nam, optio nobis!</Typography>
+                <Box sx={{ marginBottom:'1rem' }}>{/* Info */}
+                    <Typography>{products.description}</Typography>
                 </Box>
                 
                 < ItemCount count={count} setCount={setCount} { ...products } />
 
-                {/* Añadir al carrito */}
-                <Button onClick={ handleClick } border='dark' variant='secondary-outlined' style={{margin: '0.5rem 0.5rem 0.5rem 0.5rem', padding: '10px' }} ><h6>Anadir al carrito</h6></Button>
+                <Box sx={{ display:'flex' }}>
 
-                {/* Comprar ahora */}
-                <Button variant='secondary-outlined' style={{margin: '0.5rem 0.5rem 0.5rem 0.5rem', padding: '10px' }}><h6>Comprar ahora</h6></Button>
+                    <Button onClick={ handleClick } variant="outlined" className='bnt-detail' >Añadir al carrito</Button>                               
+                    <Button onClick={ handleClick } variant="outlined" className='bnt-detail' ><Link to='/carrito'> Comprar Ahora</Link></Button>                               
 
-                <Typography>Estas comprando {count} cantidades de este producto.</Typography>
+                </Box>
+
+                <Typography>Estas comprando {count} cantidades de este producto.</Typography> 
                 
             </Box>
 

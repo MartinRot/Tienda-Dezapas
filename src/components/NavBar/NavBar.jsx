@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import "./styles.css";
-
 import { AppBar, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { Box } from '@mui/system';
 import logo from './logo.png'
 import CartWidget from '../CartWidget/CartWidget';
 import Profile from '../Profile/Profile';
-
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -94,15 +92,15 @@ const NavBar = () => {
             </Menu>
 
             <Typography sx={{marginRight:'20px', cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
-              <Link to='/novedades'> Novedades </Link>
+              <Link to='zapatillas/subcategoria/novedades'> Novedades </Link>
             </Typography>
 
             <Typography sx={{marginRight:'20px', cursor:'pointer', color:'red', fontWeight:'800'}}>
-              <Link to='/sales'> Sales </Link>
+              <Link to='zapatillas/subcategoria/sales'> Sales </Link>
             </Typography>
 
             <Typography sx={{marginRight:'20px', cursor:'pointer', color:'rgba(0,0,0,.5)', fontWeight:'800'}}>
-              <Link to='rastreador'> Rastrea tu pedido </Link>
+              <Link to='rastreador'> Seguí tu compra </Link>
             </Typography>
 
           </Box>

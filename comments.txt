@@ -1,0 +1,24 @@
+- ICONO PROFILE
+
+
+
+//Hook react similar a link pero se puede utilizar para hacer validaciones
+  let navigate = useNavigate();
+
+  const isLogeado = () => {
+    //Si el usuario esta logueado
+    const logueado = true;
+    if (logueado) {
+      navigate('/zapatillas')
+    } else {
+      navigate('/')
+    }
+  };
+
+  --------------
+
+<Box>
+      <Button onClick={buscarPedido}> Buscar pedido </Button>
+
+      <Paper>fd</Paper>
+</Box>

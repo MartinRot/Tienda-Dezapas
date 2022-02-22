@@ -1,29 +1,17 @@
-import { Button } from '@mui/material';
+import { Button, Paper } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import BuscarPedido from '../components/BuscarPedido/BuscarPedido';
 
 
 const RastreadorPage = () => {
 
-  //Hook react similar a link pero se puede utilizar para hacer validaciones
-  let navigate = useNavigate();
-
-  const buscarPedido = () => {
-    //Si el usuario esta logueado
-    const logueado = true;
-    if (logueado) {
-      navigate('/zapatillas')
-    } else {
-      navigate('/')
-    }
-  };
+  let navigate = useNavigate();  
 
   return (
 
-    <Box>
-      <Button onClick={buscarPedido}> Buscar pedido </Button>
-    </Box>
+    <BuscarPedido />
 
   )  
 };

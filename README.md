@@ -1,13 +1,15 @@
-Proyecto Final React JS - Coderhouse
-E-commerce construido con React JS para el Proyecto Final de Coderhouse.
+# Proyecto Final de React JS - Coderhouse
+
+E-commerce construido para el Proyecto Final del curso React JS - Coderhouse.
 
 Dependencias Utilizadas 🛠️
-React JS
-Material UI
-Bootstrap React
-React Router DOM
+- React JS
+- Material UI
+- Bootstrap React
+- Firebase
+- React Router DOM
 
-Getting Started with
+👉🏼 [Link del proyecto](https://trusting-shockley-92f2ca.netlify.app/) 👈🏼
 
 # Getting Started with Create React App
 

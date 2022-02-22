@@ -6,7 +6,6 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import "./styles.css"
 import { Box } from '@mui/system';
 import { Typography } from '@mui/material';
-import SelectSize from '../ItemListContainer/SelectSize';
 
 function ItemCount ( { count, setCount, ...product } ) { 
 
@@ -29,22 +28,15 @@ function ItemCount ( { count, setCount, ...product } ) {
     
     return (
         
-        <Box sx={{flex: '0 0 50%', maxWidth: '40%', textAlign: '-webkit-center', backgroundColor: '#white' }}>
+        <Box sx={{ backgroundColor: '#white' }}>
 
-            <Box>
-                <Typography className='product' component='h6'>
-                    Selecciona tu talle
-                </Typography>
-                <SelectSize />
-            </Box>
-
-            <Box>
+            <Box> 
                 <Typography className='product' component='h6'>
                     Cantidad
                 </Typography>
             </Box>
-
-            <Card border="dark" style={{ flexDirection: 'row', justifyContent: 'space-between', width: '16rem', borderWidth: '2px' }} >
+            
+            <Card border="dark" style={{ flexDirection: 'row', justifyContent: 'space-between', width: '15rem', borderWidth: '2px' }} >
                             
                 <Button onClick={restar}  style={{ backgroundColor: 'white', color: 'black', border: '0' }} className='buttonCounter'> <RemoveIcon /></Button>
                 

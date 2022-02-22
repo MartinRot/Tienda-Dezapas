@@ -4,6 +4,7 @@ import Item from './Item'
 import "./styles.css"
 import { getFirestore } from '../../firebase'
 import { useParams } from 'react-router-dom'
+import { Box } from '@mui/system'
 
 const ItemList = () => {
 
@@ -87,9 +88,12 @@ const ItemList = () => {
 
           {isLoading ? ( 
             
-            <CircularProgress />
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <CircularProgress />
+            </Box>
 
           ) : (
+            
             products.map((product) => {
                 return <Item key={product.id} product={product} />
               })

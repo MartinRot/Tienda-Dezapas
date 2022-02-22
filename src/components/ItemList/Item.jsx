@@ -19,9 +19,8 @@ const Item = ({ product }) => {
         <>                      
                 <div className='producto'>
 
-                    <a href="#">
+                    <a onClick={() => navigate(`/zapatillas/${product.id}`)} style={{cursor:'pointer'}}>
                         <div className='producto__img'>
-                            {/* <img src={product.img} alt={product.name} /> */}
                             <img src={IMG} alt={product.name} />
                         </div>
                     </a>

@@ -9,19 +9,7 @@ const ItemDetailContainer = () => {
 
   const {id} = useParams();
   const [products, setProducts] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
-
-  /* useEffect(() => {    
-
-    const URL = `http://localhost:3001/productos/${id}`
-    setIsLoading(true)
-
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .finally(() => setIsLoading(false));  
-    
-    }, [id]);    */        
+  const [isLoading, setIsLoading] = useState(false)        
       
     useEffect(() => {
 
@@ -47,7 +35,9 @@ const ItemDetailContainer = () => {
       
       {isLoading ? ( 
 
-      <CircularProgress />
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <CircularProgress />
+        </Box>        
 
       ) : (       
         <Box sx={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>

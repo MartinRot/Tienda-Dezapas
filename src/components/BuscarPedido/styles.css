@@ -1,0 +1,14 @@
+.buscarPedido{
+    display: flex;
+    justify-content: space-around;    
+}
+
+.buscarPedido .card{
+    min-width: 40%;
+    min-height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.02)
+}

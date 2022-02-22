@@ -36,12 +36,12 @@ function App() {
           </Route>
 
           <Route path="zapatillas/categoria/:categoria" element={ < ZapatillasPage /> } />
-          <Route path=":subcategoria" element={ < ZapatillasPage /> } />            
+          <Route path="zapatillas/subcategoria/:subcategoria" element={ < ZapatillasPage /> } />            
           <Route path='/rastreador' element={< RastreadorPage />} />
 
           <Route path='/checkout'>
             <Route index element={< CheckoutPage /> } />
-            <Route path=':orderID' element={ <ThankYouPage /> } />
+            <Route path=":orderID" element={ <ThankYouPage /> } />
           </Route>
 
           <Route path='/carrito' element={< CartPage /> } />          
