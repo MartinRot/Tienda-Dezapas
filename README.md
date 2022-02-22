@@ -1,4 +1,4 @@
-# Proyecto Final de React JS - Coderhouse
+# Proyecto Final curso React JS - Coderhouse
 
 E-commerce construido para el Proyecto Final del curso React JS - Coderhouse.
 
