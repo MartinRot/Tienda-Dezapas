@@ -1,5 +1,3 @@
-//Iniciar json server -> npm run json-server 
-
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from './pages/HomePage';
@@ -13,17 +11,17 @@ import { CartProvider } from './context/CartContext';
 import Footer from './components/Footer/Footer';
 import ThankYouPage from './pages/ThankYouPage';
 
-function App() {    
-   
+function App() {      
+
   return (
 
   <div className='App'>
      
     <CartProvider>
-    <BrowserRouter>
+    <BrowserRouter>    
 
-      <NavBar />  
-
+    <NavBar />   
+      
       <Routes>
 
         <Route path='/' > 
@@ -59,8 +57,6 @@ function App() {
 
   );
 }
-
-
 
 export default App;
 

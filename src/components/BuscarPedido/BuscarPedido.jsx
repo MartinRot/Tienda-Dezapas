@@ -1,10 +1,7 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import "./styles.css"
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { useCart } from '../../context/CartContext';
-import { getFirestore } from '../../firebase';
 import { useNavigate } from 'react-router-dom';
-import firebase from "firebase";
 import 'firebase/firestore'
 import { Typography } from '@mui/material';
 
@@ -43,8 +40,6 @@ const BuscarPedido = () => {
                 navigate(`/checkout/${orderNumber}`)
             }
             
-            cambiarFormularioEnviado(true);
-            setTimeout(() => cambiarFormularioEnviado(false), 5000)
         }}
     >
 
@@ -72,7 +67,6 @@ const BuscarPedido = () => {
 
                 <button type="submit">Ver mi pedido</button>
 
-                {formularioEnviado && <p className="exito">Compra realizada con exito!</p>}
             </Form>
         )}        
 

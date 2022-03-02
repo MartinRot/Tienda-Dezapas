@@ -28,3 +28,5 @@ const firebaseConfig = {
   export const getFirestore = () => {
       return firebase.firestore(app);
   }
+
+  export const fire = app;

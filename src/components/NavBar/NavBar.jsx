@@ -5,7 +5,6 @@ import { AppBar, Menu, MenuItem, Toolbar, Typography } from '@mui/material'
 import { Box } from '@mui/system';
 import logo from './logo.png'
 import CartWidget from '../CartWidget/CartWidget';
-import Profile from '../Profile/Profile';
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -108,7 +107,7 @@ const NavBar = () => {
           {/* Button links */}
           <Box sx={{display:"flex", justifyContent:"center", alignItems:"center"}}>
             
-          <Link to='/profile'> <Profile /> </Link>   
+          {/* <Link to='/profile'> <Profile /> </Link>      */}
           <Link to='/carrito'> <CartWidget /> </Link>   
             
           </Box>

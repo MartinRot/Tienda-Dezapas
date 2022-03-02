@@ -5,7 +5,18 @@ export const CartContext = createContext({});
 CartContext.displayName = "CartContext";
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+
+  let cartLocalStorage = JSON.parse(localStorage.getItem("carrito"));
+
+  const [cart, setCart] = useState(
+    cartLocalStorage ? cartLocalStorage : []
+  );
+
+  // guarda el carrito en el localStorage
+  localStorage.setItem("carrito", JSON.stringify(cart));
+
+  /* const [cart, setCart] = useState([]); */
+
 
   //Agrega items de a 1 desde Item List
   const addItem = (item, cantidad) => {
